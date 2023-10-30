@@ -6,3 +6,16 @@ Selitä mitä erityistä tietokannan käyttäjässä root on. Miksi käyttäjäl
 Miksi etäkirjautuminen root-käyttäjällä tulisi olla estetty?
 Selitä, miten root-käyttäjän etäkirjautuminen voidaan estää (muuten kuin asennusvelhon kautta).
 
+
+
+// Root antaa kaikki käyttöoikeudet käyttäjälle. Tämän ansiosta käyttäjä esimerkiksi devaaja voi tehdä mitä tahansa
+// ilman käyttöoikeden tarkistuksia.
+// Etäkirjautumisen root käyttäjällä pitäisi olla estetty, koska se on suuri tietoturvariski.
+// Jokin haitallinen osapuoli voi päästä etäyhteyden kautta sisälle koneeseen ja jos etä- root on käytössä voi hän tehdä mitä tahansa.
+
+
+// Tämä komento poistaa mahdollisuuden käyttää root-käyttäjän etäkirjautumista.
+
+Delete from mysql.user Where user='root' and host not in ('localhost', '127.0.0.1', '::1');
+
+Flush privileges;

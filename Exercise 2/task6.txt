@@ -1,6 +1,5 @@
 /*
 The employee database has a following table:
-
 Employee-tietokannassa on seuraava taulu:
 
 Employee
@@ -27,4 +26,10 @@ Määritä uudet taulut samaan tapaan, kuin esimerkki on määritetty yllä.
 CREATE-lauseita ei tarvitse kirjoittaa.
 Lisää esimerkkidataa tauluihisi.
 */
+Alter table Employees modify column phone VARCHAR (30) default 'N/A'
 
+insert into Employees(first_name, last_name, email, supervisor, office_room, city)
+Values ("Andy", "Smith", "andy@company.com", Jill Jackson, B-11, New York);
+
+insert into Employees(first_name, last_name, email, supervisor, office_room, city)
+Values ("Ruby", "Black", "ruby@company.com", John Doe, A-22, San Francisco);

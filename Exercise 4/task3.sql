@@ -1,7 +1,7 @@
 /*
 Write a stored procedure which adds a comment to an article. Procedure should have error handling implemented.
 A comment can be added if the commented article exists and the comment is written by a user who have permissions
-to write comments (application user permissions, not database user). Define an out parameter for the procedure 
+to write comments (application user permissions, not database user). Define an out parameter for the procedure
 which describes wether there were errors or not and which type of error occured. Define all possible error codes
 as a comment.
 

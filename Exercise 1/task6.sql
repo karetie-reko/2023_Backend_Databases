@@ -11,3 +11,8 @@ Valitse sarakkeille sopivat tietotyypit.
  - review text
  - a reference to the album id which is reviewed, not null
 */
+
+CREATE TABLE review (id INT auto_increment, name_of_the_reviewer
+varchar(255) not null, headline varchar(255), review_text LONGTEXT,
+album_id int not null, primary key(id),
+FOREIGN KEY (album_id) references album(id));

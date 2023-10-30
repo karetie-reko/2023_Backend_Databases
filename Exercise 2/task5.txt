@@ -1,5 +1,5 @@
 /*
-Give an example of an unnormalized table. Describe why it is problematic to have 
+Give an example of an unnormalized table. Describe why it is problematic to have
 an unnormalized table in the database. Include some example data in your answer.
 The data should show clearly the problem (or problems) unnormalized table causes.
 
@@ -8,3 +8,18 @@ on ongelmallinen. Sisällytä esimerkkidataa vastaukseesi. Datan tulisi selväst
 jonka normalisoimaton taulu aiheuttaa.
 */
 
+Ongelma normalisoimattomassa taulussa on, se että ne sisältävät paljon duplikaatteja mitkä
+aiheuttavat haasteita. Esimerkiksi jos halutaan päivittää käyttäjän tietoja, pitäisi jokaista taulua päivittää erikseen.
+Normalisoimattomissa tauluissa voi myös olla turhia riippuvuuksia. Kuten
+Esimmmerkkiksi tämä:
+
+ID:          nimi           phone             sijainti         Sql
+
+1           Murku       477384, 04043445       Tampere         sql
+
+2            Meme          9095545              Nokia          sql
+
+3            Muro           3435054             Siuro           JS
+
+
+Tässä esimerkkissä haluamme poistaa Murkun toisen puhelinnumeron ei tämä onnistu kätevästi, koska Murkulla on kaksi puhelinnumeroa samalla id:eellä

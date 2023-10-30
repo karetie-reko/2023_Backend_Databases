@@ -7,4 +7,33 @@ Luo tietokanta viime viikon tehtävän 3 perusteella. Tuossa tehtävässä suuni
 Tietokannan tulee noudattaa viime viikon suunitelmaa. Jos suunnitelmaan pitää tehdä muutoksia, lisää palautukseen
 mukaan kuva päivitetyn tietokannan rakenteesta. Lisää myös vierasavainrajoitteet tauluille.
 */
+Create DATABASE Verkkolehti;
 
+
+CREATE table if not EXISTS Kayttajat (
+    id int AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(20) NOT NULL,
+    last_name VARCHAR(20) NOT NULL,
+    PhoneNumber INT not NULL,
+    email VARCHAR(255) NOT NULL,
+    userauth VARCHAR(255) not NULL,
+    user_info VARCHAR(255) NOT NULL UNIQUE
+);
+
+CREATE TABLE if not EXISTS Artikkelit (
+ id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    content TEXT,
+    author_id INT,
+    FOREIGN KEY (author_id) REFERENCES Kayttajat(id) on delete set null on update cascade,
+    time_of_release TIMESTAMP NOT NULL
+);
+
+ CREATE TABLE if not EXISTS Kommentit(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    article_id int,
+    foreign key(article_id) References Artikkelit(id) on delete set null,
+    COMMENT_date TEXT not NULL,
+    user_id int,
+    foreign key (user_id) References Kayttajat(id) on delete set null
+ );

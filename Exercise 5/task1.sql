@@ -6,3 +6,4 @@ Suunnittele indeksit verkkolehtitietokannalle. Mitkä kentät tulisi indeksoida 
 Kirjoita indeksien luontilauseet ja perusteet sille, miksi määritit kyseiset indeksit.
 */
 
+
